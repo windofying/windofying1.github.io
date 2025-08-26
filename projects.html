@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects — CECC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="projects-page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span>CECC</span>
+        </a>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Solutions &amp; Services</a>
+          <a class="active" href="projects.html">Projects</a>
+          <a href="safety.html">Safety &amp; Qualifications</a>
+          <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Open Menu">☰</button>
+      </div>
+    </header>
+
+    <main class="container page">
+      <h1>Projects</h1>
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="solar">Solar</button>
+        <button class="filter" data-filter="industrial">Industrial</button>
+        <button class="filter" data-filter="datacenter">Data Center</button>
+      </div>
+      <div class="grid gallery" id="projectGallery">
+        <figure class="card project solar">
+          <picture>
+            <source srcset="assets/img/project2.jpg" type="image/jpeg" />
+            <img src="assets/img/project2.svg" alt="100MW Solar Farm, Fort Stockton, TX" />
+          </picture>
+          <figcaption>100MW Solar Farm, Fort Stockton, TX</figcaption>
+        </figure>
+        <figure class="card project solar">
+          <picture>
+            <source srcset="assets/img/project3.jpg" type="image/jpeg" />
+            <img src="assets/img/project3.svg" alt="60MW Solar Farm, Balmorhea, TX" />
+          </picture>
+          <figcaption>60MW Solar Farm, Balmorhea, TX</figcaption>
+        </figure>
+        <figure class="card project industrial">
+          <picture>
+            <source srcset="assets/img/project1.jpg" type="image/jpeg" />
+            <img src="assets/img/project1.svg" alt="Tesla Gigafactory (Industrial Automation)" />
+          </picture>
+          <figcaption>Tesla Gigafactory (Industrial Automation)</figcaption>
+        </figure>
+        <figure class="card project industrial">
+          <picture>
+            <source srcset="assets/img/project4.jpg" type="image/jpeg" />
+            <img src="assets/img/project4.svg" alt="Cryogenic Plant, Balmorhea, TX" />
+          </picture>
+          <figcaption>Cryogenic Plant, Balmorhea, TX</figcaption>
+        </figure>
+        <figure class="card project industrial">
+          <picture>
+            <source srcset="assets/img/project5.jpg" type="image/jpeg" />
+            <img src="assets/img/project5.svg" alt="Cheese Factory, Lubbock, TX" />
+          </picture>
+          <figcaption>Cheese Factory, Lubbock, TX</figcaption>
+        </figure>
+        <figure class="card project datacenter">
+          <picture>
+            <source srcset="assets/img/project6.jpg" type="image/jpeg" />
+            <img src="assets/img/project6.svg" alt="XX Company Data Center Phase I" />
+          </picture>
+          <figcaption>(To add) XX Company Data Center Phase I</figcaption>
+        </figure>
+        <figure class="card project solar">
+          <picture>
+            <source srcset="assets/img/project7.jpg" type="image/jpeg" />
+            <img src="assets/img/project7.svg" alt="XX Logistics Center Rooftop Solar Project" />
+          </picture>
+          <figcaption>(To add) XX Logistics Center Rooftop Solar Project</figcaption>
+        </figure>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img src="assets/img/logo.svg" class="logo" alt="CECC" />
+          <p>Constant Energy Construction Corp — Powering Future Excellence.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Solutions &amp; Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="safety.html">Safety &amp; Qualifications</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> CECC. All rights reserved.</span>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+
+

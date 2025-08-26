@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us — CECC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span>CECC</span>
+        </a>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Solutions &amp; Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="safety.html">Safety &amp; Qualifications</a>
+          <a href="contact.html" class="btn btn-primary active">Contact Us</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Open Menu">☰</button>
+      </div>
+    </header>
+
+    <main class="container page">
+      <h1>Contact Us</h1>
+      <div class="grid contact">
+        <div>
+          <h2>Company</h2>
+          <p><strong>Constant Energy Construction Corp (CECC)</strong></p>
+          <p>Hobbs, NM</p>
+          <p><a href="tel:+1">Phone: +1 (TBD)</a></p>
+          <p><a href="mailto:info@cecc.com">Email: info@cecc.com</a></p>
+          <p>Careers: We are always looking for talented individuals to join our team.</p>
+        </div>
+        <form class="card contact-form" action="#" method="post">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span>Company</span>
+            <input type="text" name="company" />
+          </label>
+          <label>
+            <span>Phone</span>
+            <input type="tel" name="phone" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            <span>Service of Interest</span>
+            <select name="service">
+              <option>Industrial Electrical &amp; Automation</option>
+              <option>Energy &amp; Infrastructure</option>
+              <option>Solar &amp; Renewable Energy</option>
+              <option>Data Center Power Solutions</option>
+              <option>Communications &amp; Fiber Optics</option>
+            </select>
+          </label>
+          <label>
+            <span>Project Description</span>
+            <textarea name="description" rows="6" placeholder="Tell us about your project..."></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <picture>
+            <source srcset="assets/img/logo.jpg" type="image/jpeg" />
+            <img src="assets/img/logo.svg" class="logo" alt="CECC" />
+          </picture>
+          <p>Constant Energy Construction Corp — Powering Future Excellence.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Solutions &amp; Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="safety.html">Safety &amp; Qualifications</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> CECC. All rights reserved.</span>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+
+
