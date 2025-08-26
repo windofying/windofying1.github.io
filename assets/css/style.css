@@ -95,6 +95,12 @@ a { color: inherit; text-decoration: none; }
   border-radius: 12px;
 }
 
+/* 服务卡片文字居中 */
+.service-card h3,
+.service-card p {
+  text-align: center;
+}
+
 /* Intro section background */
 .intro-bg {
   background-image: url('../img/tagline-bg.jpg');
@@ -704,6 +710,12 @@ html, body { color: var(--text); background: var(--bg-gradient); }
     background-size: cover;
     background-position: center;
   }
+  
+  /* 强制文字居中 */
+  .home-page .service-card h3,
+  .home-page .service-card p {
+    text-align: center !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -714,6 +726,12 @@ html, body { color: var(--text); background: var(--bg-gradient); }
   .home-page .service-card .service-bg > * {
     padding: 6px 2px;
   }
+  
+  /* 强制文字居中 */
+  .home-page .service-card h3,
+  .home-page .service-card p {
+    text-align: center !important;
+  }
 }
 
 @media (max-width: 360px) {
@@ -723,5 +741,11 @@ html, body { color: var(--text); background: var(--bg-gradient); }
   
   .home-page .service-card .service-bg > * {
     padding: 4px 1px;
+  }
+  
+  /* 强制文字居中 */
+  .home-page .service-card h3,
+  .home-page .service-card p {
+    text-align: center !important;
   }
 }
