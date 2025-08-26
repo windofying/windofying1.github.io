@@ -310,41 +310,41 @@ a { color: inherit; text-decoration: none; }
   }
   
   /* 移动端按钮样式 */
-  .btn { padding: 12px 20px; font-size: 16px; }
+  .btn { padding: 10px 16px; font-size: 14px; }
   
   /* 移动端容器间距 */
-  .container { padding: 0 18px; }
+  .container { padding: 0 15px; }
   
-  /* 移动端标题大小 - 保持与PC端接近 */
-  .page h1 { font-size: 36px; margin: 24px 0; }
-  .page h2 { font-size: 28px; margin: 24px 0 10px; }
+  /* 移动端标题大小 - 缩小字体 */
+  .page h1 { font-size: 28px; margin: 18px 0; }
+  .page h2 { font-size: 22px; margin: 18px 0 8px; }
   
   /* 移动端英雄区域 */
-  .hero { height: 65vh; }
-  .hero h1 { font-size: 36px; }
-  .hero p { font-size: 18px; }
+  .hero { height: 50vh; }
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 16px; }
   
   /* 移动端统计区域 */
-  .stats { gap: 16px; padding: 24px 0; }
-  .stat { padding: 20px; }
-  .stat strong { font-size: 26px; }
+  .stats { gap: 12px; padding: 18px 0; }
+  .stat { padding: 16px; }
+  .stat strong { font-size: 22px; }
   
   /* 移动端服务卡片 */
-  .service-card .service-bg > * { padding: 20px; }
+  .service-card .service-bg > * { padding: 16px; }
   
   /* 移动端关于页面 */
   .about-page .leaders .leader-avatar { 
-    width: 160px; 
-    height: 160px; 
-    margin-bottom: 16px; 
+    width: 120px; 
+    height: 120px; 
+    margin-bottom: 12px; 
   }
   
   /* 移动端表单 */
   .contact-form input, 
   .contact-form textarea, 
   .contact-form select { 
-    padding: 12px 16px; 
-    font-size: 16px; 
+    padding: 10px 14px; 
+    font-size: 14px; 
   }
 }
 
@@ -365,39 +365,70 @@ a { color: inherit; text-decoration: none; }
   .services-page .page { grid-template-columns: 1fr; }
 }
 
-/* 手机端专用样式 - 保持与PC端排版一致 */
+/* 手机端专用样式 - 缩小各项内容，保持排版一致 */
 @media (max-width: 480px) {
-  .container { padding: 0 20px; }
+  .container { padding: 0 12px; }
   
-  .hero { height: 70vh; }
-  .hero h1 { font-size: 32px; }
-  .hero p { font-size: 18px; }
-  .hero-ctas { flex-direction: row; gap: 12px; flex-wrap: wrap; }
+  .hero { height: 45vh; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 14px; }
+  .hero-ctas { flex-direction: row; gap: 8px; flex-wrap: wrap; }
   
-  .page h1 { font-size: 36px; }
-  .page h2 { font-size: 26px; }
+  .page h1 { font-size: 24px; }
+  .page h2 { font-size: 20px; }
   
-  .stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .stat { padding: 20px; }
-  .stat strong { font-size: 24px; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat { padding: 12px; }
+  .stat strong { font-size: 18px; }
   
-  .cards { gap: 16px; }
-  .card { padding: 20px; }
+  .cards { gap: 12px; }
+  .card { padding: 16px; }
   
   .service-icon { 
-    width: 180px; 
-    height: 180px; 
-    margin-bottom: 12px; 
+    width: 120px; 
+    height: 120px; 
+    margin-bottom: 8px; 
   }
   
   .about-page .leaders .leader-avatar { 
-    width: 150px; 
-    height: 150px; 
-    border-radius: 8px;
+    width: 80px; 
+    height: 80px; 
+    border-radius: 6px;
   }
   
-  .footer-grid { gap: 20px; padding: 40px 0; }
-  .footer-bottom { flex-direction: row; gap: 16px; text-align: left; }
+  .footer-grid { gap: 16px; padding: 30px 0; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+/* 超小屏手机专用样式 */
+@media (max-width: 360px) {
+  .container { padding: 0 10px; }
+  
+  .hero { height: 40vh; }
+  .hero h1 { font-size: 20px; }
+  .hero p { font-size: 12px; }
+  
+  .page h1 { font-size: 20px; }
+  .page h2 { font-size: 18px; }
+  
+  .stats { gap: 6px; }
+  .stat { padding: 10px; }
+  .stat strong { font-size: 16px; }
+  
+  .cards { gap: 8px; }
+  .card { padding: 12px; }
+  
+  .service-icon { 
+    width: 80px; 
+    height: 80px; 
+  }
+  
+  .about-page .leaders .leader-avatar { 
+    width: 60px; 
+    height: 60px; 
+  }
+  
+  .btn { padding: 8px 12px; font-size: 12px; }
 }
 
 /* THEME OVERRIDES: unify deep-blue palette and typography/forms */
