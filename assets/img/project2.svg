@@ -1,0 +1,20 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Project image placeholder 2">
+  <defs>
+    <linearGradient id="p2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b5cab"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#p2)"/>
+  <g fill="#e0f2fe" opacity="0.85">
+    <rect x="60" y="420" width="120" height="60" rx="6"/>
+    <rect x="190" y="420" width="120" height="60" rx="6"/>
+    <rect x="320" y="420" width="120" height="60" rx="6"/>
+    <rect x="450" y="420" width="120" height="60" rx="6"/>
+    <rect x="580" y="420" width="120" height="60" rx="6"/>
+  </g>
+</svg>
+
+
+
+
