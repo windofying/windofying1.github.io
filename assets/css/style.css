@@ -97,7 +97,9 @@ a { color: inherit; text-decoration: none; }
 
 /* 服务卡片文字居中 */
 .service-card h3,
-.service-card p {
+.service-card p,
+.card h3,
+.card p {
   text-align: center;
 }
 
@@ -333,13 +335,15 @@ a { color: inherit; text-decoration: none; }
   }
   
   /* 移动端服务文字调整 - 缩小一倍 */
-  .service-card h3 {
+  .service-card h3,
+  .card h3 {
     font-size: 6px;
     margin-bottom: 2px;
     text-align: center;
   }
   
-  .service-card p {
+  .service-card p,
+  .card p {
     font-size: 5px;
     line-height: 1.1;
     text-align: center;
@@ -451,13 +455,15 @@ a { color: inherit; text-decoration: none; }
   }
   
   /* 服务文字进一步缩小 */
-  .service-card h3 {
+  .service-card h3,
+  .card h3 {
     font-size: 5.5px;
     margin-bottom: 1.5px;
     text-align: center;
   }
   
-  .service-card p {
+  .service-card p,
+  .card p {
     font-size: 4.5px;
     line-height: 1.0;
     text-align: center;
@@ -517,13 +523,15 @@ a { color: inherit; text-decoration: none; }
   }
   
   /* 服务文字最小化 */
-  .service-card h3 {
+  .service-card h3,
+  .card h3 {
     font-size: 5px;
     margin-bottom: 1px;
     text-align: center;
   }
   
-  .service-card p {
+  .service-card p,
+  .card p {
     font-size: 4px;
     line-height: 1.0;
     text-align: center;
@@ -713,7 +721,9 @@ html, body { color: var(--text); background: var(--bg-gradient); }
   
   /* 强制文字居中 */
   .home-page .service-card h3,
-  .home-page .service-card p {
+  .home-page .service-card p,
+  .home-page .card h3,
+  .home-page .card p {
     text-align: center !important;
   }
 }
@@ -729,7 +739,9 @@ html, body { color: var(--text); background: var(--bg-gradient); }
   
   /* 强制文字居中 */
   .home-page .service-card h3,
-  .home-page .service-card p {
+  .home-page .service-card p,
+  .home-page .card h3,
+  .home-page .card p {
     text-align: center !important;
   }
 }
@@ -745,7 +757,9 @@ html, body { color: var(--text); background: var(--bg-gradient); }
   
   /* 强制文字居中 */
   .home-page .service-card h3,
-  .home-page .service-card p {
+  .home-page .service-card p,
+  .home-page .card h3,
+  .home-page .card p {
     text-align: center !important;
   }
 }
