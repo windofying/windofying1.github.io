@@ -46,7 +46,7 @@ a { color: inherit; text-decoration: none; }
 
 .intro { padding: 60px 0 20px; }
 .intro-band {
-  background-image: url('../img/tagline-bg.jpg');
+  background-image: url('../img/home/tagline-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -73,7 +73,7 @@ a { color: inherit; text-decoration: none; }
 .card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
 .leaders { grid-template-columns: repeat(4, 1fr); }
 .promises { grid-template-columns: repeat(3, 1fr); }
-.projects { grid-template-columns: repeat(3, 1fr); }
+.projects { grid-template-columns: repeat(2, 1fr); }
 .gallery .card { padding: 0; overflow: hidden; }
 .gallery figcaption { padding: 12px 14px; font-size: 14px; color: #c9d2f0; }
 
@@ -105,7 +105,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Intro section background */
 .intro-bg {
-  background-image: url('../img/tagline-bg.jpg');
+  background-image: url('../img/home/tagline-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -138,7 +138,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .story-bg {
-  background-image: url('../img/story-bg.jpg');
+  background-image: url('../img/about/story-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -178,7 +178,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .service-bg {
-  background-image: url('../img/service-bg.jpg');
+  background-image: url('../img/services/service-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -210,19 +210,19 @@ a { color: inherit; text-decoration: none; }
 
 /* Services: five different background images per card - high priority */
 .services-page #industrial .service-bg {
-  background-image: url('../img/service-industrial.jpg') !important;
+  background-image: url('../img/services/service-industrial.jpg') !important;
 }
 .services-page #solar .service-bg {
-  background-image: url('../img/service-solar.jpg') !important;
+  background-image: url('../img/services/service-solar.jpg') !important;
 }
 .services-page #datacenter .service-bg {
-  background-image: url('../img/service-datacenter.jpg') !important;
+  background-image: url('../img/services/service-datacenter.jpg') !important;
 }
 .services-page #fiber .service-bg {
-  background-image: url('../img/service-fiber.jpg') !important;
+  background-image: url('../img/services/service-fiber.jpg') !important;
 }
 .services-page #infrastructure .service-bg {
-  background-image: url('../img/service-infrastructure.jpg') !important;
+  background-image: url('../img/services/service-infrastructure.jpg') !important;
 }
 
 /* About sections: make background fully overlap the card */
@@ -230,19 +230,19 @@ a { color: inherit; text-decoration: none; }
 .about-page .leaders-section { padding: 0; background: transparent; overflow: hidden; margin-bottom: 30px; }
 .about-page .promises-section { padding: 0; background: transparent; overflow: hidden; }
 .about-page .story-section .story-bg { 
-  background-image: url('../img/story-bg.jpg');
+  background-image: url('../img/about/story-bg.jpg');
   border-radius: 16px; 
   overflow: hidden; 
   height: 100%; 
 }
 .about-page .leaders-section .story-bg { 
-  background-image: url('../img/leaders-bg.jpg');
+  background-image: url('../img/about/leaders-bg.jpg');
   border-radius: 16px; 
   overflow: hidden; 
   height: 100%; 
 }
 .about-page .promises-section .story-bg { 
-  background-image: url('../img/promises-bg.jpg');
+  background-image: url('../img/about/promises-bg.jpg');
   border-radius: 16px; 
   overflow: hidden; 
   height: 100%; 
@@ -292,12 +292,137 @@ a { color: inherit; text-decoration: none; }
 .contact-form label { display: grid; gap: 6px; font-size: 14px; }
 .contact-form input, .contact-form textarea, .contact-form select { padding: 10px 12px; border: 1px solid #ddd; border-radius: 10px; font: inherit; }
 
+/* 许可证展示区域样式 */
+.licenses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+.license-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.license-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.license-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 2px solid var(--line);
+}
+
+.license-name {
+  font-size: 12px;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+/* 图片放大模态框样式 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  backdrop-filter: blur(3px);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+#caption {
+  margin: 15px auto 0;
+  display: block;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff6b6b;
+  background: rgba(0,0,0,0.7);
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
 @media (max-width: 960px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
   .leaders { grid-template-columns: repeat(2, 1fr); }
   .promises { grid-template-columns: 1fr; }
   .projects { grid-template-columns: repeat(2, 1fr); }
   .contact { grid-template-columns: 1fr; }
+  
+  /* 移动端许可证网格调整 */
+  .licenses-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+  }
+  
+  .license-img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .license-name {
+    font-size: 11px;
+  }
 }
 @media (max-width: 720px) {
   .site-nav { display: none; position: absolute; top: 64px; right: 20px; background: #0b2a5a; border: 1px solid rgba(255,255,255,0.12); padding: 10px; border-radius: 12px; flex-direction: column; gap: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); }
@@ -350,7 +475,7 @@ a { color: inherit; text-decoration: none; }
   }
   
   .cards { grid-template-columns: 1fr; }
-  .projects { grid-template-columns: 1fr; }
+  .projects { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; }
   
   /* 移动端导航菜单样式 */
@@ -391,6 +516,48 @@ a { color: inherit; text-decoration: none; }
     padding: 10px 14px; 
     font-size: 14px; 
   }
+  
+  /* 移动端许可证样式 */
+  .licenses-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .license-item {
+    padding: 10px;
+  }
+  
+  .license-img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .license-name {
+    font-size: 10px;
+  }
+  
+  /* 移动端模态框调整 */
+  .modal {
+    padding: 10px;
+  }
+  
+  .modal-content {
+    max-width: 95%;
+    max-height: 85%;
+  }
+  
+  .close {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+  }
+  
+  #caption {
+    font-size: 14px;
+    margin-top: 10px;
+  }
 }
 
 
@@ -401,13 +568,157 @@ a { color: inherit; text-decoration: none; }
 .services-page h1 { grid-column: 1 / -1; }
 .services-page .bullets li { color: #dbeafe; }
 
-.projects-page .filters { display: flex; gap: 10px; justify-content: center; margin-bottom: 16px; }
-.projects-page .filter { padding: 8px 14px; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; background: #0b2a5a; color: #e5e7eb; cursor: pointer; transition: .2s ease; }
-.projects-page .filter.active, .projects-page .filter:hover { background: #0b5cab; border-color: #0b5cab; }
-.gallery .card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+/* 项目页面样式 */
+.page-intro {
+  color: var(--text-muted);
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-page .filters { 
+  display: flex; 
+  gap: 12px; 
+  justify-content: center; 
+  margin-bottom: 40px; 
+  flex-wrap: wrap;
+}
+
+.projects-page .filter { 
+  padding: 12px 20px; 
+  border: 2px solid var(--line); 
+  border-radius: 999px; 
+  background: var(--surface); 
+  color: var(--text); 
+  cursor: pointer; 
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.projects-page .filter.active, 
+.projects-page .filter:hover { 
+  background: var(--brand); 
+  border-color: var(--brand);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-color: var(--brand);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-img { 
+  width: 100%; 
+  height: 250px; 
+  object-fit: contain; 
+  object-position: center;
+  background: #f8f9fa;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(11, 92, 171, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  color: var(--text);
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.project-content p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(11, 92, 171, 0.1);
+  color: var(--brand);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(11, 92, 171, 0.2);
+}
 
 @media (max-width: 960px) {
   .services-page .page { grid-template-columns: 1fr; }
+  
+  /* 项目页面移动端样式 */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .project-img {
+    height: 220px;
+  }
+  
+  .projects-page .filters {
+    gap: 8px;
+  }
+  
+  .projects-page .filter {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
 }
 
 /* 手机端专用样式 - 缩小各项内容，保持排版一致 */

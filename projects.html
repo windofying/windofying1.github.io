@@ -26,70 +26,189 @@
     </header>
 
     <main class="container page">
-      <h1>Projects</h1>
+      <h1>Our Projects</h1>
+      <p class="page-intro">Explore our portfolio of successful electrical, automation, and renewable energy projects across various industries.</p>
+      
       <div class="filters">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="solar">Solar</button>
+        <button class="filter active" data-filter="all">All Projects</button>
+        <button class="filter" data-filter="solar">Solar Energy</button>
         <button class="filter" data-filter="industrial">Industrial</button>
-        <button class="filter" data-filter="datacenter">Data Center</button>
+        <button class="filter" data-filter="mining">Mining</button>
       </div>
-      <div class="grid gallery" id="projectGallery">
-        <figure class="card project solar">
-          <picture>
-            <source srcset="assets/img/project2.jpg" type="image/jpeg" />
-            <img src="assets/img/project2.svg" alt="100MW Solar Farm, Fort Stockton, TX" />
-          </picture>
-          <figcaption>100MW Solar Farm, Fort Stockton, TX</figcaption>
-        </figure>
-        <figure class="card project solar">
-          <picture>
-            <source srcset="assets/img/project3.jpg" type="image/jpeg" />
-            <img src="assets/img/project3.svg" alt="60MW Solar Farm, Balmorhea, TX" />
-          </picture>
-          <figcaption>60MW Solar Farm, Balmorhea, TX</figcaption>
-        </figure>
-        <figure class="card project industrial">
-          <picture>
-            <source srcset="assets/img/project1.jpg" type="image/jpeg" />
-            <img src="assets/img/project1.svg" alt="Tesla Gigafactory (Industrial Automation)" />
-          </picture>
-          <figcaption>Tesla Gigafactory (Industrial Automation)</figcaption>
-        </figure>
-        <figure class="card project industrial">
-          <picture>
-            <source srcset="assets/img/project4.jpg" type="image/jpeg" />
-            <img src="assets/img/project4.svg" alt="Cryogenic Plant, Balmorhea, TX" />
-          </picture>
-          <figcaption>Cryogenic Plant, Balmorhea, TX</figcaption>
-        </figure>
-        <figure class="card project industrial">
-          <picture>
-            <source srcset="assets/img/project5.jpg" type="image/jpeg" />
-            <img src="assets/img/project5.svg" alt="Cheese Factory, Lubbock, TX" />
-          </picture>
-          <figcaption>Cheese Factory, Lubbock, TX</figcaption>
-        </figure>
-        <figure class="card project datacenter">
-          <picture>
-            <source srcset="assets/img/project6.jpg" type="image/jpeg" />
-            <img src="assets/img/project6.svg" alt="XX Company Data Center Phase I" />
-          </picture>
-          <figcaption>(To add) XX Company Data Center Phase I</figcaption>
-        </figure>
-        <figure class="card project solar">
-          <picture>
-            <source srcset="assets/img/project7.jpg" type="image/jpeg" />
-            <img src="assets/img/project7.svg" alt="XX Logistics Center Rooftop Solar Project" />
-          </picture>
-          <figcaption>(To add) XX Logistics Center Rooftop Solar Project</figcaption>
-        </figure>
+
+      <div class="projects-grid" id="projectGallery">
+        <!-- Solar Projects -->
+        <div class="project-card solar">
+          <div class="project-image">
+            <img src="assets/img/projects/100w Megawatt Site.jpg" alt="100MW Solar Farm" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-category">Solar Energy</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>100MW Solar Farm</h3>
+            <p>Large-scale utility solar installation with advanced monitoring systems and grid integration.</p>
+            <div class="project-tags">
+              <span class="tag">Solar</span>
+              <span class="tag">Utility Scale</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card solar">
+          <div class="project-image">
+            <img src="assets/img/projects/60w Megawatt Site.jpg" alt="60MW Solar Farm" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-category">Solar Energy</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>60MW Solar Farm</h3>
+            <p>Mid-scale solar power plant with efficient energy storage and distribution systems.</p>
+            <div class="project-tags">
+              <span class="tag">Solar</span>
+              <span class="tag">Energy Storage</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card solar">
+          <div class="project-image">
+            <img src="assets/img/projects/16w Megawatt Site.jpg" alt="16MW Solar Farm" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-category">Solar Energy</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>16MW Solar Farm</h3>
+            <p>Community-scale solar installation providing clean energy to local communities.</p>
+            <div class="project-tags">
+              <span class="tag">Solar</span>
+              <span class="tag">Community</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card solar">
+          <div class="project-image">
+            <img src="assets/img/projects/Toyo Solar Plant.jpg" alt="Toyo Solar Plant" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-category">Solar Energy</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Toyo Solar Plant</h3>
+            <p>Industrial solar facility with advanced automation and control systems.</p>
+            <div class="project-tags">
+              <span class="tag">Solar</span>
+              <span class="tag">Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Industrial Projects -->
+        <div class="project-card industrial">
+          <div class="project-image">
+            <img src="assets/img/projects/Cheese Factory in lubbock.jpg" alt="Cheese Factory, Lubbock, TX" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-category">Industrial</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Cheese Factory, Lubbock, TX</h3>
+            <p>Complete electrical infrastructure for food processing facility with specialized equipment.</p>
+            <div class="project-tags">
+              <span class="tag">Food Processing</span>
+              <span class="tag">Industrial</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card industrial">
+          <div class="project-image">
+            <img src="assets/img/projects/Cryogenic Site.jpg" alt="Cryogenic Plant" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-category">Industrial</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Cryogenic Plant</h3>
+            <p>Specialized electrical systems for cryogenic processing with safety-critical components.</p>
+            <div class="project-tags">
+              <span class="tag">Cryogenic</span>
+              <span class="tag">Safety Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mining Projects -->
+        <div class="project-card mining">
+          <div class="project-image">
+            <img src="assets/img/projects/Cryo Mining Farm.jpg" alt="Cryo Mining Farm" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-category">Mining</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Cryo Mining Farm</h3>
+            <p>Cryptocurrency mining facility with high-efficiency power distribution and cooling systems.</p>
+            <div class="project-tags">
+              <span class="tag">Cryptocurrency</span>
+              <span class="tag">High Power</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card mining">
+          <div class="project-image">
+            <img src="assets/img/projects/SOS Mining Farm.jpg" alt="SOS Mining Farm" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-category">Mining</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>SOS Mining Farm</h3>
+            <p>Advanced mining operation with redundant power systems and environmental controls.</p>
+            <div class="project-tags">
+              <span class="tag">Mining</span>
+              <span class="tag">Redundancy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card mining">
+          <div class="project-image">
+            <img src="assets/img/projects/Worsham Mining Farm.jpg" alt="Worsham Mining Farm" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-category">Mining</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Worsham Mining Farm</h3>
+            <p>Large-scale mining facility with integrated power management and monitoring systems.</p>
+            <div class="project-tags">
+              <span class="tag">Mining</span>
+              <span class="tag">Power Management</span>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
+
+    <!-- 图片放大模态框 -->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage">
+      <div id="caption"></div>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <img src="assets/img/logo.jpg" class="logo" alt="CECC" />
+          <picture>
+            <source srcset="assets/img/common/logo.jpg" type="image/jpeg" />
+            <img src="assets/img/common/logo.svg" class="logo" alt="CECC" />
+          </picture>
           <p>Constant Energy Construction Corp — Powering Future Excellence.</p>
         </div>
         <div>
@@ -102,7 +221,6 @@
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
-
       </div>
       <div class="container footer-bottom">
         <span>© <span id="year"></span> CECC. All rights reserved.</span>
@@ -112,6 +230,4 @@
 
     <script src="assets/js/main.js"></script>
   </body>
-  </html>
-
-
+</html>

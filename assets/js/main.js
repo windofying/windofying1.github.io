@@ -20,6 +20,68 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }));
   }
+
+  // 许可证图片点击放大功能
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const captionText = document.getElementById('caption');
+  const closeBtn = document.querySelector('.close');
+
+  // 为所有许可证图片添加点击事件
+  const licenseImages = document.querySelectorAll('.license-img');
+  licenseImages.forEach(img => {
+    img.addEventListener('click', function() {
+      modal.style.display = 'block';
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    });
+  });
+
+  // 为所有项目图片添加点击事件
+  const projectImages = document.querySelectorAll('.project-img');
+  projectImages.forEach(img => {
+    img.addEventListener('click', function() {
+      modal.style.display = 'block';
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    });
+  });
+
+  // 为项目卡片添加点击事件
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const img = this.querySelector('.project-img');
+      if (img) {
+        modal.style.display = 'block';
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+      }
+    });
+  });
+
+  // 关闭模态框
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+  }
+
+  // 点击模态框背景关闭
+  if (modal) {
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
+
+  // ESC键关闭模态框
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal && modal.style.display === 'block') {
+      modal.style.display = 'none';
+    }
+  });
 });
 
 

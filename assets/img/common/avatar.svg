@@ -1,0 +1,21 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar">
+  <defs>
+    <linearGradient id="ga" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e5e7eb"/>
+      <stop offset="1" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="16" fill="url(#ga)"/>
+  <circle cx="64" cy="48" r="22" fill="#94a3b8"/>
+  <rect x="24" y="76" width="80" height="32" rx="16" fill="#94a3b8"/>
+  <rect x="24" y="86" width="80" height="22" rx="11" fill="#a3b0c2"/>
+</svg>
+
+
+
+
+
+
+
+
+
