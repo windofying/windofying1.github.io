@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Simple gallery filter on projects page
   const filters = document.querySelectorAll('.filter');
-  const items = document.querySelectorAll('#projectGallery .project');
+  const items = document.querySelectorAll('#projectGallery .project-card');
   if (filters.length && items.length) {
     filters.forEach(btn => btn.addEventListener('click', () => {
       filters.forEach(b => b.classList.remove('active'));
