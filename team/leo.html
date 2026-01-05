@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leo Miao | Co-Founder</title>
+    <meta name="description" content="Leo Miao - Co-Founder at CECC" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+      .business-card {
+        max-width: 500px;
+        width: 100%;
+        padding: 32px;
+        background: #0b2a5a;
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+      }
+      .card-content {
+        flex: 1;
+      }
+      .business-card h1 {
+        margin: 0 0 8px 0;
+        font-size: 28px;
+        font-weight: 600;
+        color: #e6eefc;
+      }
+      .business-card .title {
+        font-size: 16px;
+        color: #b7c8ea;
+        margin-bottom: 12px;
+      }
+      .business-card .company {
+        font-size: 14px;
+        color: #9fb4dc;
+        margin-bottom: 24px;
+      }
+      .business-card .contact {
+        margin-top: 24px;
+      }
+      .business-card .contact a {
+        display: block;
+        text-decoration: none;
+        color: #c9dcff;
+        font-size: 16px;
+        margin-bottom: 12px;
+        padding: 8px 0;
+        transition: color 0.2s ease;
+      }
+      .business-card .contact a:hover {
+        color: #e6eefc;
+        text-decoration: none;
+      }
+      .card-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: #e6eefc;
+        font-size: 24px;
+        white-space: nowrap;
+      }
+      @media (max-width: 768px) {
+        .business-card {
+          flex-direction: column;
+          padding: 24px;
+        }
+        .card-brand {
+          align-self: flex-end;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="business-card">
+      <div class="card-content">
+        <h1>Leo Miao</h1>
+        <div class="title">Co-Founder</div>
+        <div class="company">Constant Energy Construction Corp</div>
+        <div class="contact">
+          <a href="tel:+19178903088">📞 917-890-3088</a>
+          <a href="mailto:leo@ceccx.com">✉️ leo@ceccx.com</a>
+        </div>
+      </div>
+      <div class="card-brand">CECC</div>
+    </div>
+  </body>
+</html>
+
