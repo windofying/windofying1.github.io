@@ -68,8 +68,23 @@ a { color: inherit; text-decoration: none; }
 .stat span { color: #c7d2fe; }
 
 .grid { display: grid; gap: 18px; }
-.cards { grid-template-columns: repeat(4, 1fr); }
-.card { background: #0b2a5a; color: #e5e7eb; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 18px; transition: .2s ease; }
+.cards { 
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  justify-items: center;
+}
+.card { 
+  background: #0b2a5a; 
+  color: #e5e7eb; 
+  border: 1px solid rgba(255,255,255,0.06); 
+  border-radius: 14px; 
+  padding: 18px; 
+  transition: .2s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
 .leaders { grid-template-columns: repeat(4, 1fr); }
 .promises { grid-template-columns: repeat(3, 1fr); }
@@ -77,7 +92,13 @@ a { color: inherit; text-decoration: none; }
 .gallery .card { padding: 0; overflow: hidden; }
 .gallery figcaption { padding: 12px 14px; font-size: 14px; color: #c9d2f0; }
 
-.services-highlight { padding: 20px 0 40px; }
+.services-highlight { padding: 20px 0 40px; text-align: center; }
+.services-highlight .cards { 
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+}
 .featured-projects { padding: 20px 0 40px; }
 .cta { text-align: center; padding: 40px 0 80px; }
 
@@ -87,12 +108,24 @@ a { color: inherit; text-decoration: none; }
 .footer-grid a { color: #fff; opacity: 0.9; }
 
 /* Service icons uniform size */
-.service-icon {
+.card picture {
+  display: block;
   width: 256px;
   height: 256px;
+  margin: 0 auto 12px;
+  aspect-ratio: 1 / 1;
+}
+
+.service-icon {
+  width: 256px !important;
+  height: 256px !important;
+  max-width: 256px !important;
+  max-height: 256px !important;
+  aspect-ratio: 1 / 1 !important;
   object-fit: cover;
   margin: 0 auto 12px;
   border-radius: 12px;
+  display: block;
 }
 
 /* 服务卡片文字居中 */
@@ -223,6 +256,9 @@ a { color: inherit; text-decoration: none; }
 }
 .services-page #infrastructure .service-bg {
   background-image: url('../img/services/service-infrastructure.jpg') !important;
+}
+.services-page #ai-infrastructure .service-bg {
+  background-image: url('../img/services/High-Density AI Infrastructure & Modular Data Center Systems.jpg') !important;
 }
 
 /* About sections: make background fully overlap the card */
@@ -453,9 +489,18 @@ a { color: inherit; text-decoration: none; }
   }
   
   /* 移动端服务图标调整 - 放大四倍 */
-  .service-icon {
+  .card picture {
     width: 160px;
     height: 160px;
+    aspect-ratio: 1 / 1;
+  }
+  .service-icon {
+    width: 160px !important;
+    height: 160px !important;
+    max-width: 160px !important;
+    max-height: 160px !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover;
     margin: 0 auto 8px;
   }
   
@@ -566,7 +611,20 @@ a { color: inherit; text-decoration: none; }
 
 .services-page .page { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .services-page h1 { grid-column: 1 / -1; }
-.services-page .bullets li { color: #dbeafe; }
+.services-page .service-card p,
+.services-page .service-bg p {
+  text-align: left !important;
+}
+.services-page .bullets { 
+  text-align: left !important; 
+  padding-left: 40px;
+  margin-left: 0;
+}
+.services-page .bullets li { 
+  color: #dbeafe; 
+  text-align: left !important; 
+  list-style-position: outside;
+}
 
 /* 项目页面样式 */
 .page-intro {
@@ -759,9 +817,18 @@ a { color: inherit; text-decoration: none; }
   .cards { gap: 12px; }
   .card { padding: 16px; }
   
+  .card picture {
+    width: 128px;
+    height: 128px;
+    aspect-ratio: 1 / 1;
+  }
   .service-icon { 
-    width: 128px; 
-    height: 128px; 
+    width: 128px !important; 
+    height: 128px !important;
+    max-width: 128px !important;
+    max-height: 128px !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover;
     margin: 0 auto 6px; 
   }
   
@@ -827,9 +894,18 @@ a { color: inherit; text-decoration: none; }
   .cards { gap: 8px; }
   .card { padding: 12px; }
   
+  .card picture {
+    width: 112px;
+    height: 112px;
+    aspect-ratio: 1 / 1;
+  }
   .service-icon { 
-    width: 112px; 
-    height: 112px; 
+    width: 112px !important; 
+    height: 112px !important;
+    max-width: 112px !important;
+    max-height: 112px !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover;
     margin: 0 auto 4px; 
   }
   
