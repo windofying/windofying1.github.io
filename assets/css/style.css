@@ -192,6 +192,10 @@ a { color: inherit; text-decoration: none; }
   z-index: 1;
 }
 
+/* 文章页：遮罩放到最底层，不遮挡标题/日期/图片/说明 */
+.blog-article-page .story-bg.blog-article-box::before { z-index: 0; }
+.blog-article-page .story-bg.blog-article-box { position: relative; }
+
 .story-bg h2,
 .story-bg p,
 .story-bg ul,
@@ -1222,3 +1226,8 @@ html, body { color: var(--text); background: var(--bg-gradient); }
 @media (max-width: 360px) {
   .blog-page .blog-title-cell h2 { font-size: 14px !important; }
 }
+
+/* 文章页：强制标题/日期/图片/说明在遮罩之上，并强制图片为 50% 宽 */
+.blog-article-page .story-bg.blog-article-box > * { position: relative; z-index: 2; }
+.blog-article-page .blog-article-fig { width: 50% !important; max-width: 50% !important; margin-left: auto !important; margin-right: auto !important; }
+.blog-article-page .blog-article-fig img { width: 100% !important; max-width: 100% !important; height: auto !important; }
