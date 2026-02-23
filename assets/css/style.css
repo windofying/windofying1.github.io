@@ -199,7 +199,12 @@ a { color: inherit; text-decoration: none; }
 .story-bg li,
 .story-bg div,
 .story-bg span,
-.story-bg a {
+.story-bg a,
+.story-bg h1,
+.story-bg time,
+.story-bg figure,
+.story-bg img,
+.story-bg figcaption {
   position: relative;
   z-index: 2;
 }
@@ -541,18 +546,22 @@ a { color: inherit; text-decoration: none; }
   /* 移动端标题大小 - 缩小字体 */
   .page h1 { font-size: 28px; margin: 18px 0; }
   .page h2 { font-size: 22px; margin: 18px 0 8px; }
+  .blog-article-box .blog-article-title { font-size: 24px; }
   
   /* 移动端 Blog 列表：表格改为上下堆叠，避免横向滚动 */
   .blog-item-table,
   .blog-item-table tbody,
   .blog-item-table tr { display: block; }
   .blog-item-table td { display: block; width: 100%; }
-  .blog-title-cell { min-width: 0; padding-bottom: 8px; }
+  .blog-title-cell { min-width: 0; padding-bottom: 8px; max-width: 100%; }
   .blog-date-cell { padding-top: 0; text-align: right; }
-  .blog-item.card { padding: 0; }
+  .blog-item.card { padding: 0; max-width: 100%; overflow: hidden; }
   .blog-item-table td { padding: 16px 16px 0; }
   .blog-item-table td.blog-date-cell { padding: 0 16px 16px; }
   .blog-title-cell h2 { font-size: 18px; }
+  .blog-page .blog-list { max-width: 100%; overflow: hidden; }
+  .blog-page .blog-title-cell h2,
+  .blog-page .blog-title-cell h2 a { overflow-wrap: break-word; word-break: break-word; max-width: 100%; }
   
   /* 移动端英雄区域 */
   .hero { height: 50vh; }
@@ -665,6 +674,13 @@ a { color: inherit; text-decoration: none; }
 .blog-back a { color: #c9dcff; }
 .blog-back a:hover { color: #e6eefc; text-decoration: underline; }
 .blog-article-page .blog-date { margin-bottom: 24px; }
+
+/* 文章页：标题与正文在同一框内 */
+.blog-article-box .blog-article-title { margin: 0 0 8px; font-size: 28px; line-height: 1.3; }
+.blog-article-box .blog-date { margin-bottom: 20px; display: block; }
+.blog-article-fig { margin: 16px 0 20px; width: 50%; max-width: 50%; margin-left: auto; margin-right: auto; }
+.blog-article-fig img { width: 100%; height: auto; display: block; border-radius: 8px; }
+.blog-article-fig figcaption { font-size: 12px; color: var(--text-muted); opacity: 0.85; margin-top: 6px; font-style: italic; }
 
 .projects-page .filters { 
   display: flex; 
@@ -819,11 +835,13 @@ a { color: inherit; text-decoration: none; }
   
   .page h1 { font-size: 24px; }
   .page h2 { font-size: 20px; }
+  .blog-article-box .blog-article-title { font-size: 20px; }
   
-  /* 手机端 Blog 列表 */
+  /* 手机端 Blog 列表：进一步缩小字号、防止溢出 */
   .blog-item-table td { padding: 12px 12px 0; }
   .blog-item-table td.blog-date-cell { padding: 0 12px 12px; }
-  .blog-title-cell h2 { font-size: 16px; }
+  .blog-title-cell h2 { font-size: 15px; }
+  .blog-page .blog-title-cell h2 { font-size: 15px !important; }
   
   /* 统计区域 - 一行三个，更紧凑 */
   .stats { 
@@ -901,11 +919,13 @@ a { color: inherit; text-decoration: none; }
   
   .page h1 { font-size: 20px; }
   .page h2 { font-size: 18px; }
+  .blog-article-box .blog-article-title { font-size: 18px; }
   
   /* 超小屏 Blog 列表 */
   .blog-item-table td { padding: 10px 10px 0; }
   .blog-item-table td.blog-date-cell { padding: 0 10px 10px; }
-  .blog-title-cell h2 { font-size: 15px; }
+  .blog-title-cell h2 { font-size: 14px; }
+  .blog-page .blog-title-cell h2 { font-size: 14px !important; }
   
   /* 统计区域 - 一行三个，极紧凑 */
   .stats { 
@@ -1191,14 +1211,14 @@ html, body { color: var(--text); background: var(--bg-gradient); }
 }
 
 /* Blog 索引页：标题固定字号与左对齐，避免被 .page h2 覆盖 */
-.blog-page .blog-title-cell { text-align: left !important; }
-.blog-page .blog-title-cell h2 { font-size: 22px !important; margin: 0 !important; text-align: left !important; }
+.blog-page .blog-title-cell { text-align: left !important; min-width: 0; }
+.blog-page .blog-title-cell h2 { font-size: 22px !important; margin: 0 !important; text-align: left !important; overflow-wrap: break-word; word-break: break-word; max-width: 100%; }
 @media (max-width: 720px) {
-  .blog-page .blog-title-cell h2 { font-size: 18px !important; }
+  .blog-page .blog-title-cell h2 { font-size: 17px !important; }
 }
 @media (max-width: 480px) {
-  .blog-page .blog-title-cell h2 { font-size: 16px !important; }
+  .blog-page .blog-title-cell h2 { font-size: 15px !important; }
 }
 @media (max-width: 360px) {
-  .blog-page .blog-title-cell h2 { font-size: 15px !important; }
+  .blog-page .blog-title-cell h2 { font-size: 14px !important; }
 }
