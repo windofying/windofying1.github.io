@@ -542,6 +542,18 @@ a { color: inherit; text-decoration: none; }
   .page h1 { font-size: 28px; margin: 18px 0; }
   .page h2 { font-size: 22px; margin: 18px 0 8px; }
   
+  /* 移动端 Blog 列表：表格改为上下堆叠，避免横向滚动 */
+  .blog-item-table,
+  .blog-item-table tbody,
+  .blog-item-table tr { display: block; }
+  .blog-item-table td { display: block; width: 100%; }
+  .blog-title-cell { min-width: 0; padding-bottom: 8px; }
+  .blog-date-cell { padding-top: 0; text-align: right; }
+  .blog-item.card { padding: 0; }
+  .blog-item-table td { padding: 16px 16px 0; }
+  .blog-item-table td.blog-date-cell { padding: 0 16px 16px; }
+  .blog-title-cell h2 { font-size: 18px; }
+  
   /* 移动端英雄区域 */
   .hero { height: 50vh; }
   .hero h1 { font-size: 28px; }
@@ -636,6 +648,23 @@ a { color: inherit; text-decoration: none; }
   margin-left: auto;
   margin-right: auto;
 }
+
+.blog-list { display: flex; flex-direction: column; gap: 18px; margin-top: 24px; }
+.blog-item.card { padding: 0; }
+.blog-item-table { width: 100%; border: none; border-collapse: collapse; border-spacing: 0; }
+.blog-item-table td { border: none; padding: 24px; vertical-align: middle; }
+.blog-title-cell { text-align: left; min-width: 90ch; }
+.blog-title-cell h2 { font-size: 22px; margin: 0; }
+.blog-title-cell h2 a { color: #c9dcff; }
+.blog-title-cell h2 a:hover { color: #e6eefc; text-decoration: underline; }
+.blog-date-cell { text-align: right; white-space: nowrap; }
+.blog-item-inner .blog-date,
+.blog-date-cell .blog-date { display: inline; font-size: 14px; color: var(--text-muted); opacity: 0.9; }
+
+.blog-back { margin-bottom: 16px; }
+.blog-back a { color: #c9dcff; }
+.blog-back a:hover { color: #e6eefc; text-decoration: underline; }
+.blog-article-page .blog-date { margin-bottom: 24px; }
 
 .projects-page .filters { 
   display: flex; 
@@ -791,6 +820,11 @@ a { color: inherit; text-decoration: none; }
   .page h1 { font-size: 24px; }
   .page h2 { font-size: 20px; }
   
+  /* 手机端 Blog 列表 */
+  .blog-item-table td { padding: 12px 12px 0; }
+  .blog-item-table td.blog-date-cell { padding: 0 12px 12px; }
+  .blog-title-cell h2 { font-size: 16px; }
+  
   /* 统计区域 - 一行三个，更紧凑 */
   .stats { 
     grid-template-columns: repeat(3, 1fr); 
@@ -867,6 +901,11 @@ a { color: inherit; text-decoration: none; }
   
   .page h1 { font-size: 20px; }
   .page h2 { font-size: 18px; }
+  
+  /* 超小屏 Blog 列表 */
+  .blog-item-table td { padding: 10px 10px 0; }
+  .blog-item-table td.blog-date-cell { padding: 0 10px 10px; }
+  .blog-title-cell h2 { font-size: 15px; }
   
   /* 统计区域 - 一行三个，极紧凑 */
   .stats { 
