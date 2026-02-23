@@ -192,10 +192,17 @@ a { color: inherit; text-decoration: none; }
   z-index: 1;
 }
 
-/* 文章页：遮罩放到最底层，不遮挡标题/日期/图片/说明（PC 与移动端均生效） */
-.blog-article-page .story-bg.blog-article-box::before { z-index: 0 !important; background: transparent !important; }
-.blog-article-page .story-bg.blog-article-box { position: relative; isolation: isolate; }
-.blog-article-page .story-bg.blog-article-box > * { position: relative !important; z-index: 10 !important; }
+/* 文章页：去掉遮罩，并把标题/日期/图片/说明置于最顶层 */
+.blog-article-page .story-bg.blog-article-box::before { display: none !important; }
+.blog-article-page .story-bg.blog-article-box { position: relative; z-index: 100; }
+.blog-article-page .blog-article-title,
+.blog-article-page .blog-date,
+.blog-article-page .blog-article-fig,
+.blog-article-page .blog-article-fig img,
+.blog-article-page .blog-article-fig figcaption {
+  position: relative !important;
+  z-index: 9999 !important;
+}
 
 .story-bg h2,
 .story-bg p,
@@ -1230,7 +1237,14 @@ html, body { color: var(--text); background: var(--bg-gradient); }
   .blog-page .blog-title-cell h2 { font-size: 14px !important; }
 }
 
-/* 文章页：强制标题/日期/图片/说明在遮罩之上，并强制图片为 50% 宽 */
-.blog-article-page .story-bg.blog-article-box > * { position: relative !important; z-index: 10 !important; }
+/* 文章页：强制标题/日期/图片/说明在最顶层，并强制图片为 50% 宽 */
+.blog-article-page .blog-article-title,
+.blog-article-page .blog-date,
+.blog-article-page .blog-article-fig,
+.blog-article-page .blog-article-fig img,
+.blog-article-page .blog-article-fig figcaption {
+  position: relative !important;
+  z-index: 9999 !important;
+}
 .blog-article-page .blog-article-fig { width: 50% !important; max-width: 50% !important; margin-left: auto !important; margin-right: auto !important; }
 .blog-article-page .blog-article-fig img { width: 100% !important; max-width: 100% !important; height: auto !important; }
