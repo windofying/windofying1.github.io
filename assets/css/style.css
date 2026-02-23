@@ -1189,3 +1189,16 @@ html, body { color: var(--text); background: var(--bg-gradient); }
     text-align: center !important;
   }
 }
+
+/* Blog 索引页：标题固定字号与左对齐，避免被 .page h2 覆盖 */
+.blog-page .blog-title-cell { text-align: left !important; }
+.blog-page .blog-title-cell h2 { font-size: 22px !important; margin: 0 !important; text-align: left !important; }
+@media (max-width: 720px) {
+  .blog-page .blog-title-cell h2 { font-size: 18px !important; }
+}
+@media (max-width: 480px) {
+  .blog-page .blog-title-cell h2 { font-size: 16px !important; }
+}
+@media (max-width: 360px) {
+  .blog-page .blog-title-cell h2 { font-size: 15px !important; }
+}
