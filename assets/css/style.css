@@ -192,9 +192,10 @@ a { color: inherit; text-decoration: none; }
   z-index: 1;
 }
 
-/* 文章页：遮罩放到最底层，不遮挡标题/日期/图片/说明 */
-.blog-article-page .story-bg.blog-article-box::before { z-index: 0; }
-.blog-article-page .story-bg.blog-article-box { position: relative; }
+/* 文章页：遮罩放到最底层，不遮挡标题/日期/图片/说明（PC 与移动端均生效） */
+.blog-article-page .story-bg.blog-article-box::before { z-index: 0 !important; background: transparent !important; }
+.blog-article-page .story-bg.blog-article-box { position: relative; isolation: isolate; }
+.blog-article-page .story-bg.blog-article-box > * { position: relative !important; z-index: 10 !important; }
 
 .story-bg h2,
 .story-bg p,
@@ -1214,10 +1215,12 @@ html, body { color: var(--text); background: var(--bg-gradient); }
   }
 }
 
-/* Blog 索引页：标题固定字号与左对齐，避免被 .page h2 覆盖 */
-.blog-page .blog-title-cell { text-align: left !important; min-width: 0; }
+/* Blog 索引页：标题左对齐、日期右对齐，桌面保持表格左右布局 */
+.blog-page .blog-title-cell { text-align: left !important; }
+.blog-page .blog-date-cell { text-align: right !important; }
 .blog-page .blog-title-cell h2 { font-size: 22px !important; margin: 0 !important; text-align: left !important; overflow-wrap: break-word; word-break: break-word; max-width: 100%; }
 @media (max-width: 720px) {
+  .blog-page .blog-title-cell { min-width: 0; }
   .blog-page .blog-title-cell h2 { font-size: 17px !important; }
 }
 @media (max-width: 480px) {
@@ -1228,6 +1231,6 @@ html, body { color: var(--text); background: var(--bg-gradient); }
 }
 
 /* 文章页：强制标题/日期/图片/说明在遮罩之上，并强制图片为 50% 宽 */
-.blog-article-page .story-bg.blog-article-box > * { position: relative; z-index: 2; }
+.blog-article-page .story-bg.blog-article-box > * { position: relative !important; z-index: 10 !important; }
 .blog-article-page .blog-article-fig { width: 50% !important; max-width: 50% !important; margin-left: auto !important; margin-right: auto !important; }
 .blog-article-page .blog-article-fig img { width: 100% !important; max-width: 100% !important; height: auto !important; }
