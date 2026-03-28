@@ -1,8 +1,24 @@
 /**
  * Filter chips for landing page — classic script (no ES modules).
- * Ensures clicks work even when module scripts fail (file://, strict CSP, etc.).
+ * Syncs selection to #lead-form hidden inputs (capacity, timeline, location_flexibility) for Supabase.
  */
 (function () {
+  function syncRequirementHiddenInput(group) {
+    var field = group.getAttribute('data-requirement-field');
+    if (!field) return;
+    var form = document.getElementById('lead-form');
+    if (!form) return;
+    var input = form.querySelector('input[name="' + field + '"]');
+    if (!input) return;
+    var selected = group.querySelector('.landing-chip[aria-pressed="true"]');
+    if (selected) {
+      var v = selected.getAttribute('data-value');
+      input.value = v != null && String(v).length ? v : selected.textContent.replace(/\s+/g, ' ').trim();
+    } else {
+      input.value = '';
+    }
+  }
+
   function initLandingFilterChips() {
     var groups = document.querySelectorAll('.landing-chip-group');
     for (var g = 0; g < groups.length; g++) {
@@ -21,6 +37,7 @@
               chip.setAttribute('aria-pressed', 'true');
               chip.classList.add('is-selected');
             }
+            syncRequirementHiddenInput(grp);
           };
         }(chips[i], group));
       }

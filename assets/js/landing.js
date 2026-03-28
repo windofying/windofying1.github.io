@@ -3,6 +3,9 @@ const submitBtn = document.getElementById('lead-submit');
 const formMessage = document.getElementById('lead-form-message');
 const successToast = document.getElementById('landing-success-toast');
 
+const SUBMIT_COOLDOWN_MS = 10000;
+let submitCooldownUntil = 0;
+
 function setMessage(text, kind) {
   if (!formMessage) return;
   formMessage.textContent = text || '';
@@ -57,12 +60,18 @@ async function insertLead(row) {
 if (form && submitBtn) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if (Date.now() < submitCooldownUntil) {
+      setMessage('Please wait before submitting again', 'error');
+      return;
+    }
+
     setMessage('');
 
-    const honeypot = form.querySelector('input[name="company_fax"]');
-    if (honeypot && honeypot.value.trim()) {
-      console.warn('Lead form: honeypot filled; submission ignored.');
-      setMessage('');
+    const hpFax = form.querySelector('input[name="company_fax"]');
+    const hpWebsite = form.querySelector('input[name="website"]');
+    if ((hpFax && hpFax.value.trim()) || (hpWebsite && hpWebsite.value.trim())) {
+      console.warn('Lead form: honeypot tripped; submission ignored, not sent to Supabase.');
       showSuccessToast();
       return;
     }
@@ -71,6 +80,9 @@ if (form && submitBtn) {
     const company = form.querySelector('[name="company"]')?.value?.trim() ?? '';
     const email = form.querySelector('[name="email"]')?.value?.trim() ?? '';
     const phone = form.querySelector('[name="phone"]')?.value?.trim() ?? '';
+    const capacity = form.querySelector('[name="capacity"]')?.value?.trim() || null;
+    const timeline = form.querySelector('[name="timeline"]')?.value?.trim() || null;
+    const locationFlex = form.querySelector('[name="location_flexibility"]')?.value?.trim() || null;
 
     const err = validate({ name, email, phone });
     if (err) {
@@ -84,12 +96,17 @@ if (form && submitBtn) {
     if (labelEl) labelEl.hidden = true;
     if (busyEl) busyEl.hidden = false;
 
+    let reachedNetwork = false;
     try {
+      reachedNetwork = true;
       const { error } = await insertLead({
         name,
         company: company || null,
         email,
         phone,
+        capacity,
+        timeline,
+        location_flexibility: locationFlex,
       });
 
       if (error) {
@@ -98,6 +115,10 @@ if (form && submitBtn) {
       } else {
         setMessage('');
         form.reset();
+        document.querySelectorAll('.landing-chip-group .landing-chip').forEach((c) => {
+          c.setAttribute('aria-pressed', 'false');
+          c.classList.remove('is-selected');
+        });
         showSuccessToast();
       }
     } catch (ex) {
@@ -107,6 +128,9 @@ if (form && submitBtn) {
       submitBtn.disabled = false;
       if (labelEl) labelEl.hidden = false;
       if (busyEl) busyEl.hidden = true;
+      if (reachedNetwork) {
+        submitCooldownUntil = Date.now() + SUBMIT_COOLDOWN_MS;
+      }
     }
   });
 }
