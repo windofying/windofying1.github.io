@@ -1329,26 +1329,31 @@ html, body { color: var(--text); background: var(--bg-gradient); }
   background: rgba(5, 12, 28, 0.35);
 }
 
+/* 整块用 text-align:center；芯片行用 inline-flex，避免块级 flex 100% 宽在某些环境下仍视觉偏一侧 */
+.landing-section--filters .container.landing-narrow {
+  text-align: center;
+}
+
 .landing-section--filters .landing-filter-block {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
 }
 
 .landing-section--filters .landing-filter-label {
+  display: block;
   text-align: center;
   width: 100%;
 }
 
 .landing-section--filters .landing-chip-group {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   align-content: center;
-  width: 100%;
+  gap: 10px;
   max-width: 100%;
+  vertical-align: top;
 }
 
 .landing-section--cta {
@@ -1443,6 +1448,7 @@ html, body { color: var(--text); background: var(--bg-gradient); }
   background: rgba(7, 20, 44, 0.6);
   color: rgba(230, 238, 252, 0.9);
   cursor: pointer;
+  margin: 0;
   position: relative;
   z-index: 1;
   display: inline-flex;
@@ -1618,7 +1624,10 @@ html, body { color: var(--text); background: var(--bg-gradient); }
     flex-direction: column;
   }
 
+  /* 小屏改回块级 flex，按钮才能稳定占满一行；父级 text-align:center 对块级无效，用整行宽度即可 */
   .landing-section--filters .landing-chip-group {
+    display: flex;
+    width: 100%;
     align-items: stretch;
   }
 
