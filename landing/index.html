@@ -85,28 +85,39 @@
 
           <div class="landing-filter-block">
             <h3 class="landing-filter-label">Capacity</h3>
-            <div class="landing-chip-group" role="group" aria-label="Capacity">
-              <button type="button" class="landing-chip" aria-pressed="false">10–50 MW</button>
-              <button type="button" class="landing-chip" aria-pressed="false">50–100 MW</button>
-              <button type="button" class="landing-chip" aria-pressed="false">100–300 MW</button>
-              <button type="button" class="landing-chip" aria-pressed="false">300+ MW</button>
+            <div class="landing-chip-group" role="group" aria-label="Capacity" data-requirement-field="capacity">
+              <button type="button" class="landing-chip" aria-pressed="false" data-value="10–50 MW">10–50 MW</button>
+              <button type="button" class="landing-chip" aria-pressed="false" data-value="50–100 MW">50–100 MW</button>
+              <button type="button" class="landing-chip" aria-pressed="false" data-value="100–300 MW">100–300 MW</button>
+              <button type="button" class="landing-chip" aria-pressed="false" data-value="300+ MW">300+ MW</button>
             </div>
           </div>
 
           <div class="landing-filter-block">
             <h3 class="landing-filter-label">Timeline</h3>
-            <div class="landing-chip-group" role="group" aria-label="Timeline">
-              <button type="button" class="landing-chip" aria-pressed="false">Immediate (0–6 months)</button>
-              <button type="button" class="landing-chip" aria-pressed="false">6–12 months</button>
-              <button type="button" class="landing-chip" aria-pressed="false">12+ months</button>
+            <div class="landing-chip-group" role="group" aria-label="Timeline" data-requirement-field="timeline">
+              <button type="button" class="landing-chip" aria-pressed="false" data-value="Immediate (0–6 months)">
+                Immediate (0–6 months)
+              </button>
+              <button type="button" class="landing-chip" aria-pressed="false" data-value="6–12 months">6–12 months</button>
+              <button type="button" class="landing-chip" aria-pressed="false" data-value="12+ months">12+ months</button>
             </div>
           </div>
 
           <div class="landing-filter-block">
             <h3 class="landing-filter-label">Location Flexibility</h3>
-            <div class="landing-chip-group" role="group" aria-label="Location flexibility">
-              <button type="button" class="landing-chip" aria-pressed="false">Specific Location</button>
-              <button type="button" class="landing-chip" aria-pressed="false">Flexible within U.S.</button>
+            <div
+              class="landing-chip-group"
+              role="group"
+              aria-label="Location flexibility"
+              data-requirement-field="location_flexibility"
+            >
+              <button type="button" class="landing-chip" aria-pressed="false" data-value="Specific Location">
+                Specific Location
+              </button>
+              <button type="button" class="landing-chip" aria-pressed="false" data-value="Flexible within U.S.">
+                Flexible within U.S.
+              </button>
             </div>
           </div>
         </div>
@@ -122,7 +133,7 @@
           </p>
 
           <form id="lead-form" class="landing-form" novalidate>
-            <!-- Honeypot: do not remove. Bots only. -->
+            <!-- Honeypots: hidden from users; if filled, submit is ignored (not sent to Supabase). -->
             <div class="landing-honeypot" aria-hidden="true">
               <label for="company_fax">Company fax</label>
               <input
@@ -133,6 +144,20 @@
                 autocomplete="off"
               />
             </div>
+            <div class="landing-honeypot" aria-hidden="true">
+              <label for="lead_website_hp">Website</label>
+              <input
+                type="text"
+                id="lead_website_hp"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <input type="hidden" name="capacity" id="lead-req-capacity" value="" autocomplete="off" />
+            <input type="hidden" name="timeline" id="lead-req-timeline" value="" autocomplete="off" />
+            <input type="hidden" name="location_flexibility" id="lead-req-location" value="" autocomplete="off" />
 
             <div class="landing-field-row">
               <label class="landing-label" for="lead-name">Full Name <span class="landing-req">*</span></label>
