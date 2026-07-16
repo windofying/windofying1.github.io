@@ -99,6 +99,42 @@ a { color: inherit; text-decoration: none; }
   margin: 0 auto;
   max-width: 100%;
 }
+
+/* Home service cards: 60% of the original desktop scale so all five fit at 100% browser zoom. */
+@media (min-width: 961px) {
+  .services-highlight .cards {
+    gap: 11px;
+  }
+
+  .services-highlight .card {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .services-highlight .card picture {
+    width: 154px;
+    height: 154px;
+    margin: 0 auto 7px;
+  }
+
+  .services-highlight .service-icon {
+    width: 154px !important;
+    height: 154px !important;
+    max-width: 154px !important;
+    max-height: 154px !important;
+    margin: 0 auto 7px;
+    border-radius: 7px;
+  }
+
+  .services-highlight .card h3 {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+}
 .featured-projects { padding: 20px 0 40px; }
 .cta { text-align: center; padding: 40px 0 80px; }
 
